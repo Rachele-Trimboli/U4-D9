@@ -103,7 +103,9 @@ public class Application {
         System.out.println();
         System.out.println("------Esercizio 5---------");
 
-        
+        Map<String, Double> prezzoPerCategoria = productList.stream().collect(Collectors.groupingBy(Product::getCategory,Collectors.averagingDouble(Product::getPrice)));
+        prezzoPerCategoria.forEach((categoria, prezzo) -> System.out.println("Categoria: " + categoria + ", Prezzo medio: " + prezzo));
+
 
 
 
